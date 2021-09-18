@@ -1,0 +1,81 @@
+﻿@model WebApplication1.Models.BookIssueReturn
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Book Issue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Book.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member.MemberName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member.MemberName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualReturnDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualReturnDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OneDateFine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OneDateFine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalFine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalFine)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
